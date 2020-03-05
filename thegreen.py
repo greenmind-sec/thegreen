@@ -46,6 +46,12 @@ def dnslookup(alvo):
     saida=container.decode("utf-8")
     return saida
 
+def google_hacking_search(alvo):
+    image="greenmind/dnslookup:1"
+    container = client.containers.run(image, alvo)
+    saida=container.decode("utf-8")
+    return saida
+
 def green_gethostname(url):
     name_host = socket.gethostbyname(url)
     return name_host
@@ -87,34 +93,28 @@ if os.geteuid() != 0:
 else:
     parser = argparse.ArgumentParser(description = 'GreenMind Security Scan.')
 
-    parser.add_argument('-t', action = 'store', dest = 'tipo', required = False,help = 'insert type.')
+    #parser.add_argument('-t', action = 'store', dest = 'tipo', required = False,help = 'insert type.')
     parser.add_argument('-u', action = 'store', dest = 'url', required = False,help = 'insert target.')
-    parser.add_argument('-o', action = 'store', dest = 'save', required = False,help = 'save output file.')
-    parser.add_argument('-e', action = 'store', dest = 'email', required = False,help = 'search the email.')
+    #parser.add_argument('-o', action = 'store', dest = 'save', required = False,help = 'save output file.')
+    #parser.add_argument('-e', action = 'store', dest = 'email', required = False,help = 'search the email.')
 
     arguments = parser.parse_args()
-    TYPE=arguments.tipo
+    #TYPE=arguments.tipo
     URL = arguments.url
-    SAVE=arguments.save
-    EMAIL=arguments.email
-
-
+    #SAVE=arguments.save
+    #EMAIL=arguments.email
 
     client = docker.from_env()
-
 
     # --------------------
     # Check info whois IP
     # --------------------
     print(whois_ip(URL))
-    #GeneratePDF(whois_ip(URL),SAVE)
-
 
     # --------------------
     # Check info whois URL
     # --------------------
     print(whois_url(URL))
-
 
     # --------------------
     # Check DNSlookup
@@ -130,4 +130,3 @@ else:
     # Check Crt.sh
     # --------------------
     print(crt_sh(URL))
-    #GeneratePDF(crt_sh(URL),SAVE)
