@@ -47,7 +47,7 @@ def dnslookup(alvo):
     return saida
 
 def google_hacking_search(alvo):
-    image="greenmind/dnslookup:1"
+    image="greenmind/google_hacking_search:1"
     container = client.containers.run(image, alvo)
     saida=container.decode("utf-8")
     return saida
@@ -94,7 +94,7 @@ else:
     parser = argparse.ArgumentParser(description = 'GreenMind Security Scan.')
 
     #parser.add_argument('-t', action = 'store', dest = 'tipo', required = False,help = 'insert type.')
-    parser.add_argument('-u', action = 'store', dest = 'url', required = False,help = 'insert target.')
+    parser.add_argument('-u', action = 'store', dest = 'url', required = True,help = 'insert target.')
     #parser.add_argument('-o', action = 'store', dest = 'save', required = False,help = 'save output file.')
     #parser.add_argument('-e', action = 'store', dest = 'email', required = False,help = 'search the email.')
 
