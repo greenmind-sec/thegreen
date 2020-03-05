@@ -16,3 +16,6 @@
 ```sh
 sudo python3 thegreen.py -u globo.com
 ```
+
+## Exemplo
+[![asciicast](https://asciinema.org/a/a49JpfUcy79KVJHLeDZQp9Sdg.png)](https://asciinema.org/a/a49JpfUcy79KVJHLeDZQp9Sdg)  
