@@ -8,7 +8,8 @@ import os,sys,argparse,subprocess
 import socket
 
 # PDF
-from reportlab.pdfgen import canvas
+# TODO Create 
+#from reportlab.pdfgen import canvas
 
 # Arquivo de configuração
 import json
