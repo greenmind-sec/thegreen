@@ -1,7 +1,7 @@
 import docker
 
 
-VERSION = "0.1"
+VERSION = "0.3"
 import os,sys,argparse,subprocess
 
 # Resolve URL for IP
